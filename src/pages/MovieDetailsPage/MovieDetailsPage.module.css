@@ -1,0 +1,49 @@
+.backHome {
+  color: rgb(198, 83, 102);
+}
+
+.errorText {
+  margin-top: 20px;
+  text-align: center;
+  color: rgb(198, 83, 102);
+}
+
+.loadingText {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.movieDetailsContainer {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  padding: 15px 20px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.movieImage {
+  width: 250px;
+}
+
+.additionalInfoContainer {
+  padding: 15px 20px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.additionalInfoList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.additionalInfoItem {
+  color: rgb(198, 83, 102);
+  text-decoration: none;
+
+  transition: color 0.3s ease-in-out;
+}
+
+.additionalInfoItem:hover {
+  color: black;
+}

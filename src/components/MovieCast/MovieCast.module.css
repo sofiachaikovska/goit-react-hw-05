@@ -1,0 +1,23 @@
+.errorText {
+  margin-top: 20px;
+  text-align: center;
+  color: rgb(198, 83, 102);
+}
+
+.loadingText {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.castImage {
+  width: 100px;
+}
+
+.castList {
+  list-style: none;
+}
+
+.castListItem {
+  padding: 15px 20px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}

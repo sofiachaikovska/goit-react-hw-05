@@ -1,0 +1,20 @@
+.notFoundContainer {
+  text-align: center;
+  margin-top: 250px;
+}
+
+.notFoundText {
+  display: flex;
+  flex-direction: column;
+}
+
+.notFoundAccent {
+  font-weight: bold;
+  font-size: 100px;
+  color: rgb(198, 83, 102);
+  margin-bottom: 20px;
+}
+
+.backHome {
+  color: rgb(198, 83, 102);
+}

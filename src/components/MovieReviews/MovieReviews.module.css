@@ -1,0 +1,23 @@
+.authorText {
+  font-weight: bold;
+}
+
+.errorText {
+  margin-top: 20px;
+  text-align: center;
+  color: rgb(198, 83, 102);
+}
+
+.loadingText {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.reviewsList {
+  list-style: none;
+}
+
+.reviewsListItem {
+  padding: 15px 20px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}

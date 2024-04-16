@@ -1,0 +1,38 @@
+.searchForm {
+  margin-top: 30px;
+  display: flex;
+  gap: 8px;
+}
+
+.searchFormInput {
+  width: 300px;
+}
+
+.searchFormBtn {
+  padding: 5px 15px;
+  background-color: white;
+  color: rgb(198, 83, 102);
+  box-shadow: none;
+  border: 1px solid rgb(198, 83, 102);
+
+  transition: background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.searchFormBtn:hover {
+  color: white;
+  background-color: rgb(198, 83, 102);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.errorText {
+  margin-top: 20px;
+  text-align: center;
+  color: rgb(198, 83, 102);
+}
+
+.loadingText {
+  margin-top: 20px;
+  text-align: center;
+}

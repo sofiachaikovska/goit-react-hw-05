@@ -1,0 +1,10 @@
+.errorText {
+  margin-top: 20px;
+  text-align: center;
+  color: rgb(198, 83, 102);
+}
+
+.loadingText {
+  margin-top: 20px;
+  text-align: center;
+}
