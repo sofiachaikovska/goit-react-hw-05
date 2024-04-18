@@ -1,8 +1,7 @@
 import css from "./MovieDetailsPage.module.css";
 import { requestMovieDetailsById } from "../../components/services/api";
-import { Link, useParams, Route, Routes } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { Link, useParams, Route, Routes, useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 import MovieCast from "../../components/MovieCast/MovieCast";
 import MovieReviews from "../../components/MovieReviews/MovieReviews";
 
@@ -11,6 +10,8 @@ function MovieDetailsPage() {
   const [movieDetails, setMovieDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const location = useLocation();
+  const backLinkRef = useRef();
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -29,13 +30,17 @@ function MovieDetailsPage() {
     fetchMovieDetails();
   }, [movieId]);
 
+  useEffect(() => {
+    backLinkRef.current = location.state ?? "/";
+  }, [location]);
+
   if (isError)
     return <p className={css.errorText}>Failed to load movie details.</p>;
   if (isLoading) return <p className={css.loadingText}>Loading...</p>;
 
   return (
     <>
-      <Link className={css.backHome} to="/">
+      <Link className={css.backHome} to={backLinkRef.current}>
         ← Back Home
       </Link>
       {movieDetails !== null && (
