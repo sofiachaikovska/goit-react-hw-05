@@ -1,15 +1,17 @@
 import css from "./MoviesPage.module.css";
 import { requestMoviesByQuery } from "../../components/services/api";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function MoviesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [inputValue, setInputValue] = useState("");
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
   const query = searchParams.get("query") || "";
+  const location = useLocation();
 
   useEffect(() => {
     if (!query) return;
@@ -31,11 +33,12 @@ function MoviesPage() {
   }, [query]);
 
   const handleInputChange = (event) => {
-    setSearchParams({ query: event.target.value });
+    setInputValue(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setSearchParams({ query: inputValue });
   };
 
   return (
@@ -44,7 +47,7 @@ function MoviesPage() {
         <input
           className={css.searchFormInput}
           type="text"
-          value={query}
+          value={inputValue}
           onChange={handleInputChange}
           placeholder="Search for movies"
         />
@@ -57,7 +60,9 @@ function MoviesPage() {
       <ul>
         {movies.map((movie) => (
           <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+            <Link to={`/movies/${movie.id}`} state={location}>
+              {movie.title}
+            </Link>
           </li>
         ))}
       </ul>
